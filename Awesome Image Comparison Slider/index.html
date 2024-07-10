@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+  <!--==================== METADATOS ====================-->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="description" content="ImageGalleries">
+      <meta name="keywords" content="HTML-CSS-JS">
+      <meta name="author" content="Rocio Cuello">
+      
+      <!--==================== CSS ====================-->
+      <link rel="stylesheet" href="assets/css/style.css">
+
+      <!--==================== TITULO ====================-->
+      <title> ImageGalleries | Awesome Image Comparison Slider</title>
+
+      <!--==================== ICONO DE PESTAÑA ====================-->
+      <link rel="icon" sizes="64x64" href="assets/img/favicon.webp"> 
+    </head>
+
+  <body>
+    <div class="wrapper">
+        <div class="images">
+          <div class="img-1"></div>
+          <div class="img-2"></div>
+        </div>
+        <div class="slider">
+          <div class="drag-line">
+            <span></span>
+          </div>
+          <input type="range" min="0" max="100" value="50">
+        </div>
+      </div>
+        <!--==================== script====================-->
+        <script>
+            const slider = document.querySelector(".slider input");
+            const img = document.querySelector(".images .img-2");
+            const dragLine = document.querySelector(".slider .drag-line");
+            slider.oninput = ()=>{
+              let sliderVal = slider.value;
+              dragLine.style.left = sliderVal + "%";
+              img.style.width = sliderVal + "%";
+            }
+          </script>
+  </body>
+</html>
